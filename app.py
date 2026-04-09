@@ -84,7 +84,7 @@ if uploaded_file:
     dates = pd.date_range(
         start="2025-01-01",
         periods=len(prices),
-        freq="H"
+        freq="1h"
     )
 
     df = pd.DataFrame({"Datetime": dates, "Prezzo": prices})
