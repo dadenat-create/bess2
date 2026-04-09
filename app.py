@@ -81,7 +81,11 @@ if uploaded_file:
     prices = pd.to_numeric(df_raw.iloc[:,0], errors="coerce")
     prices = prices.dropna().astype(float).tolist()
 
-    dates = pd.date_range(start="2025-01-01", periods=len(prices), freq="H")
+    dates = pd.date_range(
+    start="2025-01-01",
+    periods=len(prices),
+    freq="1H"
+)
 
     df = pd.DataFrame({"Datetime": dates, "Prezzo": prices})
     df["Data"] = df["Datetime"].dt.date
